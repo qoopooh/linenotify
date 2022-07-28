@@ -44,7 +44,7 @@ func getFilePath(jsonFileName string) (string, error) {
 
 	tmp_file := filepath.Join(tmp_folder, jsonFileName)
 	if _, err := os.Stat(tmp_file); errors.Is(err, os.ErrNotExist) {
-		d1 := []byte("[]")
+		d1 := []byte("{}")
 		err := os.WriteFile(tmp_file, d1, 0666)
 
 		return tmp_file, err
